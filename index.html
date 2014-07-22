@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="ui-mobile">
+
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <script src="Scripts/jquery-1.11.1.min.js"></script>
+
+        <link type="text/css" href="Styles/jqm-datebox.min.css" rel="stylesheet" />
+
+        <script type="text/javascript" src="main.js"></script>
+        <script src="Scripts/jquery.mobile-1.4.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.external-png-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.icons-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.inline-png-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.inline-svg-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.structure-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.theme-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/style.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/login.css"/>
+
+        <script type="text/javascript" src="Scripts/jqm-datebox.core.min.js"></script>
+        <script type="text/javascript" src="Scripts/jqm-datebox.mode.calbox.min.js"></script>
+        <script type="text/javascript" src="Scripts/jqm-datebox.mode.datebox.min.js"></script>
+
+    </head>
+
+    <body >
+        <!-- Start of first page -->
+        <div data-role="page" id="login">
+        	<div data-role="header" data-position="fixed" data-theme="a">
+                    <h1> WELCOME <img id="logo-icon" src="Images/logo-icon.gif" data-thumb="" alt="" /></h1>
+        	</div><!-- /header -->
+        	<div role="main" class="ui-content">
+        		<div class="container">
+                    <center>
+                    <img id="logo-login" src="Images/logo-login.gif" data-thumb="" alt="" />
+                    </center>
+                    <div class="login">
+                    <form name="loginEntryForm" id="loginEntryForm">
+                        <p>
+                            <input type="email" name="loginEmail" id="loginEmail" value placeholder="Email" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" >
+                        </p>
+                        </p>
+                            <input type="password" name="loginPassword" id="loginPassword" value placeholder="Password" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+                        </p>
+                        <button type="button" data-theme="a" onClick="doLogin('login');" id="SignInButton" class="ui-btn button_size">SignIn</button>
+                    </form>
+                    </div>
+                    <div class="features">
+                        <a href="#createUser" class="formLabel loginLink">Create Account &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                    </div>
+                </div>
+
+        	</div><!-- /content -->
+
+        </div><!-- /page -->
+
+        <!-- Start of second page -->
+        <div data-role="page" id="createUser">
+
+        	<div data-role="header" data-theme="a">
+        		<h1 class="formHead">Create User</h1>
+        	</div><!-- /header -->
+
+        	<div role="RegisterPage" class="ui-content">
+                <form name="userEntryForm" id="userEntryForm">
+                    <label for="isDoctor" style="display: none;">UserId:</label>
+                        <input  style="display: none;" type="text" name="isDoctor" id="isDoctor" value="">
+                    <label class="formLabel" for="registerFirst_Name">First Name:</label>
+                        <input type="text" name="firstName" id="registerFirst_Name" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel" for="registerLast_Name">Last Name:</label>
+                        <input type="text" name="lastName" id="registerLast_Name" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel" for="registerAddress">Address:</label>
+                        <input type="text" name="address" id="registerAdress" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel" >City</label>
+                        <input type="text" name="city" id="registerCity" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel">Province:</label>
+                        <select name="province" id="registerProvince">
+                            <option value="AB">AB</option>
+                            <option value="BC">BC</option>
+                            <option value="MB">MB</option>
+                            <option value="NB">NB</option>
+                            <option value="NL">NL</option>
+                            <option value="NS">NS</option>
+                            <option value="NT">NT</option>
+                            <option value="NU">NU</option>
+                            <option value="ON">ON</option>
+                            <option value="PE">PE</option>
+                            <option value="QC">QC</option>
+                            <option value="SK">SK</option>
+                            <option value="YT">YT</option>
+                        </select>
+                    <label class="formLabel" >Birthday</label>
+
+                     <input name="birthday" id="registerBirthdaytDate" type="date" data-clear-btn="true" data-role="datebox" data-options='{"mode": "datebox",
+                            "beforeToday":true,
+                            "useFocus":true,
+                            "useNewStyle":true }'/>
+
+                    <label class="formLabel">Mobile Phone:</label>
+                    <input type="tel" name="phone" id="registerPhone" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+
+                    <label class="formLabel" for="registerGender">Select Gender:</label>
+                        <select name="gender" id="registerGender">
+                            <option value ="Male">Male</option>
+                            <option value ="Female">Female</option>
+                        </select>
+                    <label class="formLabel">Email:</label>
+                        <input type="email" name="eMail" id="registerEmail1" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel">Confirm your email:</label>
+                        <input type="email" name="email" id="registerEmail2" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel" for="">Password:</label>
+                        <input type="password" name="password" id="registerPassword1" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <label class="formLabel" for="">Confirm your password:</label>
+                        <input type="password" name="password" id="registerPassword2" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                    <button type="button" data-icon="plus" onClick="doSave('user');" id="userSaveButton">Save</button>
+                    <button type="button" onClick="logout();" id="back-Button">Back</button>
+                </form>
+        	</div><!-- /content -->
+        </div><!-- /page -->
+    </body>
+</html>

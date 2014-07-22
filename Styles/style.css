@@ -1,0 +1,54 @@
+.orange {
+   height: 25px;
+   width: 25px;
+   border-radius: 100%;
+   display: inline-block;
+   background-color: #FF9C5B;
+   margin: 40px 0 50 0;
+}
+
+.ui-icon-home {
+    height: 45px;
+    width: 45px;
+}
+
+.upcoming-app {
+    font-family: "Roboto Condensed", Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.1471em;
+    padding-top: 0.3824em;
+    padding-bottom: 0;
+}
+
+.ui-title {
+    font-weight: lighter;
+}
+.ui-header, .ui-bar-a {
+    background-color: #3367D6;
+    color:white;
+    border:0;
+    height: 50px;
+    margin:auto;
+    font-weight: lighter;
+    font-size: 1.2em;
+}
+
+
+.ui-btn, .ui-link, .ui-bar-a
+{
+ background-color: #3367D6;
+    color:white;   
+}
+
+
+.ui-header2{
+    background-color: #3367D6
+}
+
+.logout-button {
+  float: right;
+  position: inherit;
+  margin-top: -43px !important;
+  margin-right: 21px !important;
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="ui-mobile">
+
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <script src="Scripts/jquery-1.11.1.min.js"></script>
+
+         <!-- <link type="text/css" href="Scripts/jqm-datebox.min.css" rel="stylesheet" /> -->
+
+        <link type="text/css" href="Styles/jqm-datebox.min.css" rel="stylesheet" /> -->
+
+        <script type="text/javascript" src="main.js"></script>
+        <script src="Scripts/jquery.mobile-1.4.2.min.js"></script>
+        <script type="text/javascript" src="Scripts/Slider/jquery.nivo.slider.js"></script>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.external-png-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.icons-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.inline-png-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.inline-svg-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.structure-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile.theme-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/jquery.mobile-1.4.2.min.css"/>
+        <link rel="stylesheet" type="text/css" href="Styles/style.css"/>
+
+        <link rel="stylesheet" href="Styles/Slider/default/default.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="Styles/Slider/nivo-slider.css" type="text/css" media="screen" />
+
+
+        <script type="text/javascript" src="Scripts/jqm-datebox.core.min.js"></script>
+        <script type="text/javascript" src="Scripts/jqm-datebox.mode.calbox.min.js"></script>
+        <script type="text/javascript" src="Scripts/jqm-datebox.mode.datebox.min.js"></script>
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+        </script>
+
+        <!-- Start of first page -->
+        <div data-role="page" id="home">
+        	<div data-role="header" data-theme="a">
+        		<h1 id="welcomeMsg"></h1>
+                <a href="#" class="logout-button" onClick="logout();" data-icon="back" data-theme="b">Log Out</a>
+        	</div><!-- /header -->
+
+        	<div role="main" class="ui-content">
+        		<div class="slider-wrapper theme-default">
+                    <div id="slider" class="nivoSlider">
+                        <img src="Images/logo-medium.gif" data-thumb="" alt="" />
+                        <img src="Images/4.jpg" data-thumb="" alt="" />
+                        <img src="Images/1.jpg" data-thumb="" alt="" data-transition="slideInLeft" />
+                        <img src="Images/2.jpg" data-thumb="" alt="" />
+                        <img src="Images/3.jpg" data-thumb="" alt="" />
+                     </div>
+                </div>
+                <p class="upcoming-app">Upcoming Appointments: </p>
+
+                <!-- List. -->
+                <ul data-role="listview" data-inset="true" id="appointmentListUL"></ul>
+
+        	</div><!-- /content -->
+
+        	<div data-role="footer" data-position="fixed" data-theme="b">
+                    <div class="ui-loader-background"></div>
+                        <div data-role="navbar" class="cssNavBar">
+                            <ul>
+                                <li><a href="#home"><span class="ui-icon-home ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#createApp"><span class="ui-icon-plus ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#editApp"><span class="ui-icon-edit ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#history"><span class="ui-icon-clock ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#profile"><span class="ui-icon-user ui-btn-icon-top"> </span></a></li>
+                            </ul>
+                        </div>
+            </div>
+        </div><!-- /page -->
+
+        <!-- Start of second page -->
+        <div data-role="page" id="createApp">
+
+        	<div data-role="header" data-theme="a">
+        		<h1>Create A New Appointment</h1>
+                <a href="#" class="logout-button" onClick="logout();" data-icon="back" data-theme="b">Log Out</a>
+        	</div><!-- /header -->
+
+        	<div role="main" class="ui-content">
+        		<div class="container">
+                    <div class="createApp">
+                        <form name="appointmentEntryForm" id="appointmentEntryForm">
+                        <p>
+                            <label for="select-choice-a" class="select">Select Doctor:</label>
+                            <select id="doctorList" name="doctorId" data-native-menu="false">
+                                <option value="Dr. Andrew Manson">Dr. Andrew Manson</option>
+                                <option value="Dr. Charles Burton">Dr. Charles Burton</option>
+                                <option value=">Dr. Jeremy Stone">Dr. Jeremy Stone</option>
+                                <option value="Dr. Mark Hall">Dr. Mark Hall</option>
+                                <option value="Dr. Peter Leavitt">Dr. Peter Leavitt</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Enter Date:</h3></label>
+                            <input name="date" id="appointmentDate" type="date" data-role="datebox" data-options='{"mode": "datebox",
+                            "afterToday": true,
+                            "useFocus":true,
+                            "useNewStyle":true }'/>
+                        </p>
+                        <p>
+                        <h3><label for="select-choice-a" class="select">Select Time</label></h3>
+                        <select name="time" id="appointmentTime" data-native-menu="false">
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="08:30 AM">08:30 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="01:30 PM">01:30 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                            <option value="05:30 PM">05:30 PM</option>
+                            <option value="06:00 PM">06:00 PM</option>
+                            <option value="06:30 PM">06:30 PM</option>
+                        </select>
+                        </p>
+                        <p>
+                            <h3><label for="select-choice-a" class="select">Description</label></h3>
+                            <input type="text" name="description" id="appointmentDescription" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+                            <input type="text" name="patientId" id="appointmentPatientId" class="" style="display: none;">
+                        </p>
+                        <button type="button" data-theme="a" onClick="doSave('appointment');" id="CreateAppButton" class="ui-btn button_size">Create Appointment</button>
+                        <a href="#home" class="ui-btn button_size">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+        	</div><!-- /content -->
+        	<div data-role="footer" data-position="fixed" data-theme="b">
+                    <div class="ui-loader-background"></div>
+                        <div data-role="navbar" class="cssNavBar">
+                            <ul>
+                                <li><a href="#home"><span class="ui-icon-home ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#createApp"><span class="ui-icon-plus ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#editApp"><span class="ui-icon-edit ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#history"><span class="ui-icon-clock ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#profile"><span class="ui-icon-user ui-btn-icon-top"> </span></a></li>
+                            </ul>
+                        </div>
+            </div>
+        </div><!-- /page -->
+
+        <!-- Start of third page -->
+        <div data-role="page" id="editApp">
+
+        	<div data-role="header" data-theme="a">
+        		<h1>Edit Appointment</h1>
+                <a href="#" class="logout-button" onClick="logout();" data-icon="back" data-theme="b">Log Out</a>
+        	</div><!-- /header -->
+
+        	<div role="main" class="ui-content">
+        		<div class="container">
+        			<div id="editAppError">
+        				<h3>Please Select an Appointment to Edit from the Homepage</h3>
+        			</div>
+
+                    <div id="editAppForm" class="editApp" style="visibility: hidden;">
+                        <form name="appointmentEditForm" id="appointmentEditForm">
+                        <p>
+                            <label for="select-choice-a" class="select">Select Doctor:</label>
+                            <select id="doctorList" name="doctorId" data-native-menu="false">
+                                <option value="Dr. Andrew Manson">Dr. Andrew Manson</option>
+                                <option value="Dr. Charles Burton">Dr. Charles Burton</option>
+                                <option value=">Dr. Jeremy Stone">Dr. Jeremy Stone</option>
+                                <option value="Dr. Mark Hall">Dr. Mark Hall</option>
+                                <option value="Dr. Peter Leavitt">Dr. Peter Leavitt</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Enter Date:</h3></label>
+                            <input name="date" id="appointmentDate" type="date" data-role="datebox" data-options='{"mode": "datebox",
+                            "afterToday": true,
+                            "useFocus":true,
+                            "useNewStyle":true }'/>
+                        </p>
+                        <p>
+                        <h3><label for="select-choice-a" class="select">Select Time</label></h3>
+                        <select name="time" id="appointmentTime" data-native-menu="false">
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="08:30 AM">08:30 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="01:30 PM">01:30 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                            <option value="05:30 PM">05:30 PM</option>
+                            <option value="06:00 PM">06:00 PM</option>
+                            <option value="06:30 PM">06:30 PM</option>
+                        </select>
+                        </p>
+                        <p>
+                            <h3><label for="select-choice-a" class="select">Description</label></h3>
+                            <input type="text" name="description" id="appointmentDescription" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+                            <input type="text" name="patientId" id="appointmentPatientId" class="" style="display: none;">
+                        </p>
+                        <button type="button" data-theme="a" onClick="doSave('editAppointment');" id="CreateAppButton" class="ui-btn button_size">Edit Appointment</button>
+                        <button type="button" data-theme="a" onClick="doDelete('appointment');" id="DeleteAppButton" class="ui-btn button_size">Delete Appointment</button>
+                        </form>
+                    </div>
+                </div>
+                <ul data-role="listview" data-inset="true" id="appointmentListUL"></ul>
+        	</div><!-- /content -->
+
+        	<div data-role="footer" data-position="fixed" data-theme="b">
+                    <div class="ui-loader-background"></div>
+                        <div data-role="navbar" class="cssNavBar">
+                            <ul>
+                                <li><a href="#home"><span class="ui-icon-home ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#createApp"><span class="ui-icon-plus ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#editApp"><span class="ui-icon-edit ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#history"><span class="ui-icon-clock ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#profile"><span class="ui-icon-user ui-btn-icon-top"> </span></a></li>
+                            </ul>
+                        </div>
+            </div>
+        </div><!-- /page -->
+
+        <!-- Start of fourth page -->
+        <div data-role="page" id="history">
+
+        	<div data-role="header" data-theme="b">
+        		<h1>Appointment History</h1>
+                <a href="#" class="logout-button" onClick="logout();" data-icon="back" data-theme="b">Log Out</a>
+        	</div><!-- /header -->
+
+        	<div role="main" class="ui-content" data-theme="b">
+        		<!-- List. -->
+                <ul data-role="listview" data-inset="true" id="appointmentHistoryListUL" data-filter="true" data-autodividers="false" class="ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
+        	</div><!-- /content -->
+
+        	<div data-role="footer" data-position="fixed" data-theme="b">
+                    <div class="ui-loader-background"></div>
+                        <div data-role="navbar" class="cssNavBar">
+                            <ul>
+                                <li><a href="#home"><span class="ui-icon-home ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#createApp"><span class="ui-icon-plus ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#editApp"><span class="ui-icon-edit ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#history"><span class="ui-icon-clock ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#profile"><span class="ui-icon-user ui-btn-icon-top"> </span></a></li>
+                            </ul>
+                        </div>
+            </div>
+        </div><!-- /page -->
+
+        <!-- Start of fifth page -->
+        <div data-role="page" id="profile">
+
+        	<div data-role="header" data-theme="a">
+        		<h1>Your Profile</h1>
+                <a href="#" class="logout-button" onClick="logout();" data-icon="back" data-theme="b">Log Out</a>
+        	</div><!-- /header -->
+
+        	<div role="main" class="ui-content">
+                <form name="userEntryForm" id="userEntryForm">
+				                    <label for="isDoctor" style="display: none;">UserId:</label>
+				                        <input  style="display: none;" type="text" name="isDoctor" id="isDoctor" value="">
+				                    <label class="formLabel" for="registerFirst_Name">First Name:</label>
+				                        <input type="text" name="firstName" id="registerFirst_Name" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel" for="registerLast_Name">Last Name:</label>
+				                        <input type="text" name="lastName" id="registerLast_Name" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel" for="registerAddress">Address:</label>
+				                        <input type="text" name="address" id="registerAdress" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel" >City</label>
+				                        <input type="text" name="city" id="registerCity" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel">Province:</label>
+				                        <select name="province" id="registerProvince">
+				                            <option value="AB">AB</option>
+				                            <option value="BC">BC</option>
+				                            <option value="MB">MB</option>
+				                            <option value="NB">NB</option>
+				                            <option value="NL">NL</option>
+				                            <option value="NS">NS</option>
+				                            <option value="NT">NT</option>
+				                            <option value="NU">NU</option>
+				                            <option value="ON">ON</option>
+				                            <option value="PE">PE</option>
+				                            <option value="QC">QC</option>
+				                            <option value="SK">SK</option>
+				                            <option value="YT">YT</option>
+				                        </select>
+
+                                        <label class="formLabel" >Birthday</label>
+
+                            <input name="birthday" id="registerBirthday" type="date" data-clear-btn="true" data-role="datebox" data-options='{"mode": "datebox",
+                            "beforeToday": true, 
+                            "useFocus":true, 
+                            "useNewStyle":true }'/>
+
+                                <label class="formLabel">Mobile Phone:</label>
+                                <input type="tel" name="phone" id="registerPhone" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+                                    <label class="formLabel" for="registerGender">Select Gender:</label>
+				                        <select name="gender" id="registerGender">
+				                            <option value ="Male">Male</option>
+				                            <option value ="Female">Female</option>
+				                        </select>
+				                    <label class="formLabel">Email:</label>
+				                        <input type="email" name="eMail" id="registerEmail1" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel">Confirm your email:</label>
+				                        <input type="email" name="email" id="registerEmail2" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel" for="">Password:</label>
+				                        <input type="password" name="password" id="registerPassword1" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <label class="formLabel" for="">Confirm your password:</label>
+				                        <input type="password" name="password" id="registerPassword2" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true">
+				                    <button type="button" data-icon="plus" onClick="updateUserInfo();" id="userSaveButton">Save</button>
+                </form>
+            </div><!-- /content -->
+        	<div data-role="footer" data-position="fixed" data-theme="b">
+                    <div class="ui-loader-background"></div>
+                        <div data-role="navbar" class="cssNavBar">
+                            <ul>
+                                <li><a href="#home"><span class="ui-icon-home ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#createApp"><span class="ui-icon-plus ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#editApp"><span class="ui-icon-edit ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#history"><span class="ui-icon-clock ui-btn-icon-top"> </span></a></li>
+                                <li><a href="#profile"><span class="ui-icon-user ui-btn-icon-top"> </span></a></li>
+                            </ul>
+                        </div>
+            </div>
+        </div><!-- /page -->
+    </body>
+</html>
