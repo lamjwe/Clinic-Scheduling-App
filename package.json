@@ -1,10 +1,37 @@
 {
-    "scripts": {
+  "name": "EbookingApp",
+  "version": "1.1.0",
+  "description": "Ebooking App for Seng",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "Jonathan, Icaro, Javob",
+    "email": "jonathanlam123@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lamj1234/Clinic-Scheduling-App.git"
+  },
+
+  "engines": {
+    "node": ">= 0.10.9",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "mongodb": ">=0.9.6-7",
+    "mongoose": ">=0.0.1"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "scripts": {
     "start": "node Server/main.js"
   },
-  "main": "Server/main.js",
-  "dependencies": {
-      "mongodb": ">=0.9.6-7",
-      "mongoose": ">=0.0.1"
-    }
+  "main": "Server/main.js"
 }
