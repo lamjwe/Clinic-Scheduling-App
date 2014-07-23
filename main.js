@@ -50,9 +50,9 @@ $(document).on("mobileinit", function() {
 
   // Determine AJAX URL prefix.
   if (document.location.protocol.toLowerCase().indexOf("file") != -1) {
-    ajaxURLPrefix = "http://www.nodejs-ebookingapp.rhcloud.com";
+    ajaxURLPrefix = "http://nodejs-ebookingapp.rhcloud.com";
   } else {
-    ajaxURLPrefix = "http://www.nodejs-ebookingapp.rhcloud.com";
+    ajaxURLPrefix = "http://nodejs-ebookingapp.rhcloud.com";
   }
 
 });
