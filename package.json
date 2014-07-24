@@ -31,7 +31,7 @@
 
   "private": true,
   "scripts": {
-    "start": "node Server/main.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1"
+    "start": "node Server/server.js"
   },
-  "main": "Server/main.js"
+  "main": "Server/server.js"
 }
